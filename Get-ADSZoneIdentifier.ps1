@@ -41,6 +41,9 @@ Will retrieve the ADS information for each file in the specified folder recursiv
 
     foreach($file in $files){
 
+            $referrer_url = ""
+            $host_url = ""
+
         try {                  
             Get-Item -Path $($file.FullName) -Stream Zone.Identifier -ErrorAction Stop | Out-Null
             $content = Get-Content -Path $($file.FullName) -Stream Zone.Identifier
